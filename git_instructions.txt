@@ -1,0 +1,29 @@
+To clone the repository
+
+git clone https:github.com/USER_NAME/reposiory
+
+Add changes to the local repository
+-A for all file that has been changed
+instead -A filename for specific file
+
+git add -A
+
+
+To know the status of the files
+
+git status
+
+
+To commit the changes to local repository
+
+git commit -m "Message short description of change"
+
+
+To get new files from the remote repository
+
+git pull
+
+
+To upload changed files to the remote repository
+
+git push
