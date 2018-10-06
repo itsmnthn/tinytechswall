@@ -19,7 +19,7 @@ To commit the changes to local repository
 git commit -m "Message short description of change"
 
 
-To get new files from the remote repository
+To get new updates from the remote repository
 
 git pull
 
