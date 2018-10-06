@@ -4,6 +4,8 @@
 *.pyc
 __pycache__/
 local_settings.py
-# db.sqlite3
-# /media
-# /static
+# /wallpapers/db.sqlite3
+# /wallpapers/media
+# /wallpapers/static
+# /wallpapers/wallpapermanagement
+/wallpapers/userauthentication
