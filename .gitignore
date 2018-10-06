@@ -8,4 +8,4 @@ local_settings.py
 # /wallpapers/media
 # /wallpapers/static
 # /wallpapers/wallpapermanagement
-/wallpapers/userauthentication
+# /wallpapers/userauthentication
