@@ -6,7 +6,7 @@
 .main{
     height:auto;
     padding: 0px;
-    background: gray;
+    background: #d3c7b8;
 }
 .navbar{
 border-radius: 0px;
@@ -19,7 +19,7 @@ border-radius: 0px;
    
 }
 .coll{
-    background-color: green;
+    background-color: transparent;
     height:100%;
     padding:20px 0px;
 1
@@ -43,4 +43,41 @@ border-radius: 0px;
     color: #808080;
 }
 
+ /*about file css*/
+ .about{
+    background: #89d9e5;
+ }
+ .mn img{
+    height: 200px;
+    width: 200px;
+    float: left;
+    
+}
+.dp img{
+    height: 200px;
+    width: 200px;
+    float: right;
+}
+.mn{
+
+}
+
+/*contact us css*/
+.feed input{
+    padding: 5px;
+    width: 100%;
+    border-radius: 10px;
+}
+.feed textarea{
+    padding: 5px;
+    border-radius: 10px;
+}
+.dropdown{
+    top:20px;
+}
+.dropdown .dropdown-menu{
+    background: gray;
+}
+
+/*category page csss*/
 
