@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>
+    {% block title %}
+        
+    {% endblock title %}
+        </title>
+    <link href="/static/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+
+<body class="main">
+    <!-- nav bar -->
+    <section>
+        <div id="#nav">
+            <div class="navbar navbar-inverse nv">
+                <div class="container-fluid">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#mynav">
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a class="navbar-brand" href="#">Wallpaper</a>
+                    </div>
+                    <div class="collapse navbar-collapse" id="mynav">
+                        <ul class="nav navbar-nav navbar-right">
+                            {% comment %} <li><a href="#">profile</a></li> {% endcomment %}
+                            <li><a href="#">Login</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- side menu -->
+        <main>
+            
+            {% block main_content %}
+                
+            {% endblock main_content %}
+                
+        </main>
+        <section>
+            <div class="foot">
+                <div class="container-fluid ">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <p class="text-center">Copyright @ indian Designer : Dhaval & Mnthn</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </section>
+
+    <!-- highlight Wallpaper -->
+
+    <!-- jquery calling -->
+    <script type="text/javascript" src="/static/bootstrap/js/jquery.min.js"></script>
+
+    <!-- Bootstrap core JavaScript -->
+    <script type="text/javascript" src="/static/bootstrap/js/bootstrap.min.js"></script>
+
+    <!-- Angular js script -->
+    <script src="/static/angular/angular.min.js"></script>
+
+    <!-- Angular js script -->
+    <!-- menu list -->
+    <script>
+        angular.module('wallApp', []).controller('menuctrl', function ($scope) {
+            $scope.menus = ['Home', 'Category', 'About', 'Contacts'];
+        });	
+    </script>
+</body>
+
+</html>

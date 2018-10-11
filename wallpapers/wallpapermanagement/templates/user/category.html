@@ -1,0 +1,127 @@
+{% extends "user/main_loggedin.html" %}
+
+{% block title %}
+	Categories
+{% endblock title %}
+	
+{% block main_content %}
+<section>
+	<div class="menu">
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-md-12">
+					<div class="">
+						<div class="col-md-2 coll">
+							<!-- angular using for menu -->
+							<div ng-app="wallApp" ng-controller="menuctrl">
+								<ul>
+									<li>
+										<a href="index.html"><span>Home</span></a>
+									</li>
+									<li>
+										<a href="Category.html"><span>Category</span></a>
+									</li>
+									<li>
+										<a href="About.html"><span>About</span></a>
+									</li>
+									<li>
+										<a href="contact.html"><span>Contact</span></a>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+
+					<!-- category page -->
+					<div class="col-md-10 about" style="padding: 10px;">
+						<div>
+							<div class="">
+								<div class="col-md-6">
+									<h1>Latest</h1>
+								</div>
+								{% comment %} <div class="col-md-6">
+									<div class="dropdown">
+										<button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Sort
+											<span class="caret"></span></button>
+										<ul class="dropdown-menu">
+											<li><a href="#">by date</a></li>
+											<li><a href="#">by download</a></li>
+											<li><a href="#">by views</a></li>
+										</ul>
+									</div>
+								</div> {% endcomment %}
+							</div><br><br>
+							<div class=""><br><br>
+								<div class="col-md-3"><br>
+									<div>
+										<img src="/media/site_media/1.jpg" class="img-responsive img-rounded">
+									</div>
+								</div>
+								<div class="col-md-3"><br>
+									<div>
+										<img src="/media/site_media/1.jpg" class="img-responsive img-rounded">
+									</div>
+								</div>
+								<div class="col-md-3"><br>
+									<div>
+										<img src="/media/site_media/1.jpg" class="img-responsive img-rounded">
+									</div>
+								</div>
+								<div class="col-md-3"><br>
+									<div>
+										<img src="/media/site_media/1.jpg" class="img-responsive img-rounded">
+									</div>
+								</div>
+							</div>
+							<div class=""><br><br>
+								<div class="col-md-3"><br>
+									<div>
+										<img src="/media/site_media/1.jpg" class="img-responsive img-rounded">
+									</div>
+								</div>
+								<div class="col-md-3"><br>
+									<div>
+										<img src="/media/site_media/1.jpg" class="img-responsive img-rounded">
+									</div>
+								</div>
+								<div class="col-md-3"><br>
+									<div>
+										<img src="/media/site_media/1.jpg" class="img-responsive img-rounded">
+									</div>
+								</div>
+								<div class="col-md-3"><br>
+									<div>
+										<img src="/media/site_media/1.jpg" class="img-responsive img-rounded">
+									</div>
+								</div>
+							</div>
+							<div class=""><br><br>
+								<div class="col-md-3"><br>
+									<div>
+										<img src="/media/site_media/1.jpg" class="img-responsive img-rounded">
+									</div>
+								</div>
+								<div class="col-md-3"><br>
+									<div>
+										<img src="/media/site_media/1.jpg" class="img-responsive img-rounded">
+									</div>
+								</div>
+								<div class="col-md-3"><br>
+									<div>
+										<img src="/media/site_media/1.jpg" class="img-responsive img-rounded">
+									</div>
+								</div>
+								<div class="col-md-3"><br>
+									<div>
+										<img src="/media/site_media/1.jpg" class="img-responsive img-rounded">
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+{% endblock main_content %}

@@ -51,18 +51,50 @@ class Wallpapers(models.Model):
 
     name = models.CharField(max_length=100)
     image = models.ImageField(upload_to=upload_image)
-    category = models.ForeignKey(Categories, on_delete=models.DO_NOTHING, related_name='category')
+    category = models.ForeignKey(
+        Categories, on_delete=models.DO_NOTHING, related_name='category')
     tags = models.TextField()
     location = models.CharField(max_length=50)
     description = models.TextField()
     likes = models.IntegerField(default=0)
     downloads = models.IntegerField(default=0)
     views = models.IntegerField(default=0)
-    uploader = models.ForeignKey(User, on_delete=models.CASCADE, related_name='user')
+    uploader = models.ForeignKey(
+        User, on_delete=models.CASCADE, related_name='user')
     active = models.BooleanField(default=True)
+    add_date = models.DateField(("Added Date"))
+    modified_date = models.DateField(
+        ("Modified Date"), default=datetime.date.today)
 
     def __str__(self):
         return self.name
 
     def upload_to(self):
         return 'wallpaper_media/wallpapers/'
+
+
+class Feedback(models.Model):
+    name = models.CharField(max_length=30)
+    email = models.EmailField()
+    description = models.TextField(max_length=200)
+    active = models.BooleanField(default=True)
+    add_date = models.DateField(("Added Date"))
+    modified_date = models.DateField(
+        ("Modified Date"), default=datetime.date.today)
+
+
+class TeamMembers(models.Model):
+    first_name = models.CharField(max_length=15)
+    last_name = models.CharField(max_length=15)
+    email = models.EmailField()
+    phone = models.IntegerField(max_length=10)
+    position = models.CharField(max_length=30)
+    skills = models.CharField(max_length=100)
+    description = models.TextField(max_length=300)
+    image = models.ImageField(upload_to=upload_image)
+
+    def __str__(self):
+        return self.name
+
+    def upload_to(self):
+        return 'site_media/wallpapers/'
