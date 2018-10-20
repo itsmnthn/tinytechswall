@@ -1,0 +1,115 @@
+{% extends "user/main_loggedin.html" %}
+{% comment %} {% extends "user/main_loggedin.html" %} {% endcomment %}
+
+{% block main_content %}
+
+
+<div class="container">
+    <section>
+        <!-- Row Title-->
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <h2>Featured</h2>
+            </div>
+        </div>
+        <!-- Row Title-->
+        <!-- Grid row -->
+        <div class="gallery" id="gallery">
+            {% for item in wallpapers %}
+            <!-- Grid column -->
+            <div class="mb-3 pics animation">
+                <img class="img-fluid" src="{{ item.image.url }}" alt="{{ item.title }}">
+            </div>
+            {% endfor %}
+            {% for item in wallpapers %}
+            <!-- Grid column -->
+            <div class="mb-3 pics animation">
+                <img class="img-fluid" src="{{ item.image.url }}" alt="{{ item.title }}">
+            </div>
+            {% endfor %}
+            {% for item in wallpapers %}
+            <!-- Grid column -->
+            <div class="mb-3 pics animation">
+                <img class="img-fluid" src="{{ item.image.url }}" alt="{{ item.title }}">
+            </div>
+            {% endfor %}
+            {% for item in wallpapers %}
+            <!-- Grid column -->
+            <div class="mb-3 pics animation">
+                <img class="img-fluid" src="{{ item.image.url }}" alt="{{ item.title }}">
+            </div>
+            {% endfor %}
+            <!-- Grid column -->
+
+        </div>
+        <!-- Grid row -->
+    </section>
+
+    <section>
+        <!-- Row Title-->
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <h2>Latest</h2>
+            </div>
+        </div>
+        <!-- Row Title-->
+        <!-- Grid row -->
+        <div class="gallery" id="gallery">
+            {% for item in items %}
+            <!-- Grid column -->
+            <div class="mb-3 pics animation">
+                <img class="img-fluid" src="/media/wallpaper_media/categories/Animal.jpg" alt="Card image cap">
+            </div>
+            {% endfor %}
+            <!-- Grid column -->
+
+        </div>
+        <!-- Grid row -->
+    </section>
+
+    <section>
+        <!-- Row Title-->
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <h2>Popular</h2>
+            </div>
+        </div>
+        <!-- Row Title-->
+        <!-- Grid row -->
+        <div class="gallery" id="gallery">
+            {% for item in items %}
+            <!-- Grid column -->
+            <div class="mb-3 pics animation">
+                <img class="img-fluid" src="/media/wallpaper_media/categories/Animal.jpg" alt="Card image cap">
+            </div>
+            {% endfor %}
+            <!-- Grid column -->
+
+        </div>
+        <!-- Grid row -->
+    </section>
+
+    <section>
+        <!-- Row Title-->
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <h2>Popular Categories</h2>
+            </div>
+        </div>
+        <!-- Row Title-->
+        <!-- Grid row -->
+        <div class="gallery" id="gallery">
+            {% for item in items %}
+            <!-- Grid column -->
+            <div class="mb-3 pics animation">
+                <img class="img-fluid" src="/media/wallpaper_media/categories/Animal.jpg" alt="Card image cap">
+            </div>
+            {% endfor %}
+            <!-- Grid column -->
+
+        </div>
+        <!-- Grid row -->
+    </section>
+
+</div>
+{% endblock main_content %}

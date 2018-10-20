@@ -1,0 +1,29 @@
+{% extends "user/main_loggedin.html" %}
+{% comment %} {% extends "user/main_loggedin.html" %} {% endcomment %}
+
+{% block main_content %}
+
+
+<div class="container">
+    <section>
+        <!-- Row Title-->
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <h2>{{ category }}</h2>
+            </div>
+        </div>
+        <!-- Row Title-->
+        <!-- Grid row -->
+        <div class="gallery" id="gallery">
+            {% for wallpaper in wallpapers %}
+            <!-- Grid column -->
+            <div class="mb-3 pics animation">
+                <img class="img-fluid" src="{{ wallpaper.image.url }}" alt="{{ wallpaper.name }}">
+            </div>
+            <!-- Grid column -->
+            {% endfor %}
+        </div>
+        <!-- Grid row -->
+    </section>
+</div>
+{% endblock main_content %}

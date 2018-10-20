@@ -87,7 +87,7 @@ class TeamMembers(models.Model):
     first_name = models.CharField(max_length=15)
     last_name = models.CharField(max_length=15)
     email = models.EmailField()
-    phone = models.IntegerField(max_length=10)
+    phone = models.IntegerField()
     position = models.CharField(max_length=30)
     skills = models.CharField(max_length=100)
     description = models.TextField(max_length=300)
