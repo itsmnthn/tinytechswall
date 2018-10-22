@@ -17,7 +17,19 @@ Including another URLconf
 from django.urls import path
 from wallpapermanagement import views
 urlpatterns = [
-    path('', views.home),
+    path('', views.home, name="home"),
+
+    path('login/', views.login, name="login"),
+    
+    path('contact-us/', views.contact_us, name="contact_us"),
+    
+    path('register', views.register, name="register"),
+    
+    path('reset/password', views.reset_password, name="reset_password"),
+    
+    path('about', views.about, name="about"),
+    
     path('categories', views.categories, name='Categories'),
+    
     path('category/<str:cat_name>', views.category, name='category'),
 ]

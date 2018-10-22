@@ -8,7 +8,11 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Wallpaper</title>
+    <title>
+    {% block title %}
+        Wallpaper
+    {% endblock title %}
+        </title>
 
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
@@ -39,7 +43,7 @@
                     <div class="logo-wrapper waves-light">
                         {% comment %} <a href="#"><img src="https://mdbootstrap.com/img/logo/mdb-transparent.png" class="img-fluid flex-center"></a>
                         {% endcomment %}
-                        <a href="#"><span class="img-fluid flex-center">Wallpaper</span></a>
+                        <a href="{% url 'home' %}"><span class="img-fluid flex-center">Wallpaper</span></a>
                     </div>
                 </li>
                 <!--/. Logo -->
@@ -68,7 +72,7 @@
                 <li>
                     <ul class="collapsible collapsible-accordion">
                         <li>
-                            <a class="collapsible-header waves-effect arrow-r">
+                            <a class="collapsible-header waves-effect arrow-r" href="{% url 'home' %}">
                                 <i class="fa fa-home"></i>
                                 Home
                             </a>
@@ -96,13 +100,13 @@
                             {% comment %} End of the category menu list angular {% endcomment %}
                         </li>
                         <li>
-                            <a class="collapsible-header waves-effect arrow-r">
+                            <a class="collapsible-header waves-effect arrow-r" href="{% url 'about' %}">
                                 <i class="fa fa-eye"></i> About
                             </a>
 
                         </li>
                         <li>
-                            <a class="collapsible-header waves-effect arrow-r" href="#">
+                            <a class="collapsible-header waves-effect arrow-r" href="{% url 'contact_us' %}">
                                 <i class="fa fa-envelope-o"></i>
                                 Contact us
                             </a>

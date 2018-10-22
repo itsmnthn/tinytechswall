@@ -1,0 +1,24 @@
+{% extends "user/main_loggedin.html" %}
+{% comment %} {% extends "user/main_loggedin.html" %} {% endcomment %}
+
+{% block title %}
+    Login
+{% endblock title %}
+    
+
+
+{% block main_content %}
+<!-- Login page will have email and password and login button in center and below
+Sign in button there is line not registered yet then click here! where here has link to register
+-->
+<div class="container">
+    <input>
+    <input>
+    <input>
+    <a href="{% url 'reset_password' %}"></a>
+    <a href="{% url 'register' %}"></a>
+
+
+</div>
+{% endblock main_content %}
+    
