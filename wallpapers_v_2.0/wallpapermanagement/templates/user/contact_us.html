@@ -2,19 +2,44 @@
 {% comment %} {% extends "user/main_loggedin.html" %} {% endcomment %}
 
 {% block title %}
-    Contact Us
+Contact Us
 {% endblock title %}
-    
+
 
 
 {% block main_content %}
-<!-- About us page Will have about pera with About as title and 
-second section will have Title Team Members and two one side photo and other side description
+<!-- Contact us will have contact information in first section and below section two
+    will have feedback form with below fields
+    name, email, description, submit
 -->
 <div class="container">
+    <div class="row text-center">
+        <!-- Contact details -->
+        <div class="col-md-6">
+            <h2> Contact us</h2>
+            <address>
+                Saurashtra university<br />
+                5456/452468
+            </address>
+        </div>
+        <!-- Feedback form  -->
+        <div class="col-md-6">
+            <h2> Feedback</h2>
 
+            <div class="row">
+                <input type="text" placeholder="Name" />
+            </div>
+            <div class="row">
+                <input type="text" placeholder="someone@example.com" />
+            </div>
+            <div class="col-md-12">
+                <textarea name="description"> </textarea>
+            </div>
+            <div class="col-md-12">
+                <input type="submit" value="Submit" />
+            </div>
 
-    
+        </div>
+    </div>
 </div>
 {% endblock main_content %}
-    
