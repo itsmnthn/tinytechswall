@@ -28,6 +28,10 @@ urlpatterns = [
     path('reset/password', views.reset_password, name="reset_password"),
     
     path('about', views.about, name="about"),
+
+    path('about', views.wallpaper, name="wallpaper"),
+    
+    path('profile', views.profile, name="profile"),
     
     path('categories', views.categories, name='Categories'),
     

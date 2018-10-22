@@ -29,6 +29,9 @@ def reset_password(request):
 def wallpaper(request):
     return render(request, 'user/wallpaper.html')
 
+def profile(request):
+    return render(request, 'user/profile.html')
+
 def category(request, cat_name):
     wallpapers = Wallpapers.objects.filter(category=cat_name)
     return render(request, 'user/category.html', {'categories':get_available_category(),'category': cat_name, 'wallpapers': wallpapers})

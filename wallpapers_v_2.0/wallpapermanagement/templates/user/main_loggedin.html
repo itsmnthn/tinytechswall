@@ -111,6 +111,36 @@
                                 Contact us
                             </a>
                         </li>
+                        <li>
+                            <a class="collapsible-header waves-effect arrow-r" href="{% url 'login' %}">
+                                <i class="fa fa-envelope-o"></i>
+                                Login
+                            </a>
+                        </li>
+                        <li>
+                            <a class="collapsible-header waves-effect arrow-r" href="{% url 'register' %}">
+                                <i class="fa fa-envelope-o"></i>
+                                Register
+                            </a>
+                        </li>
+                        <li>
+                            <a class="collapsible-header waves-effect arrow-r" href="{% url 'reset_password' %}">
+                                <i class="fa fa-envelope-o"></i>
+                                Reset Password
+                            </a>
+                        </li>
+                        <li>
+                            <a class="collapsible-header waves-effect arrow-r" href="{% url 'profile' %}">
+                                <i class="fa fa-envelope-o"></i>
+                                profile
+                            </a>
+                        </li>
+                        <li>
+                            <a class="collapsible-header waves-effect arrow-r" href="{% url 'wallpaper' %}">
+                                <i class="fa fa-envelope-o"></i>
+                                wallpaper
+                            </a>
+                        </li>
                     </ul>
                 </li>
                 <!--/. Side navigation links -->
@@ -133,14 +163,14 @@
             {% comment %} Nav Bar fix on top {% endcomment %}
             <ul class="nav navbar-nav nav-flex-icons ml-auto">
                 <li class="nav-item">
-                    <a class="nav-link">
+                    <a class="nav-link" href="{% url 'contact_us' %}">
                         <i class="fa fa-envelope"></i>
                         <span class="clearfix d-none d-sm-inline-block">Contact</span>
                     </a>
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link">
+                    <a class="nav-link" href="{% url 'profile' %}">
                         <i class="fa fa-user"></i>
                         <span class="clearfix d-none d-sm-inline-block">Account</span>
                     </a>
