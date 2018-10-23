@@ -11,14 +11,46 @@
 <!-- Login page will have email and password and login button in center and below
 Sign in button there is line not registered yet then click here! where here has link to register
 -->
-<div class="container">
-    <input>
-    <input>
-    <input>
-    <a href="{% url 'reset_password' %}">reset_password</a>
-    <a href="{% url 'register' %}">signup</a>
-
-
+<div class="logg">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="col-md-6 ">
+                    <div class="panel center-block ">
+                      <div class="panel-heading col-md-12" style="background-color:#419641;">
+                        <div>
+                          <div class="col-md-6">
+                          <h2 class=""><span class="fa fa-lock f1"> Login</span></h2>    
+                        </div>
+                        <div class="col-md-6">
+                            
+                        </div> 
+                        </div>
+                      </div>
+                      <div class="panel-body">
+                        <form class="form">
+                            <div class="col-md-12"><br>
+                                <span class="fa fa-user"> Username:</span><br>
+                                <input type="text" name="user" placeholder="user" required="required">
+                                <br><br>
+                                <span class="fa fa-user"> Email:</span><br>
+                                <input type="email" name="email" placeholder="email" required="required">
+                                <br><br>
+                                <span class="fa fa-eye"> Passaword</span><br>
+                                <input type="passaword" name="passaword" placeholder="passaword" required="required">
+                                <br><br>
+                                <button class="btn btn-success">Login</button>
+                                <button class="btn btn-success">Register</button>
+                                <br>
+                                <div><p>Forgot<a href="#"> password?</a></p></div>
+                            </div>
+                        </form>
+                      </div>
+                    </div>
+              </div>
+            </div>
+        </div>
+    </div>
 </div>
 {% endblock main_content %}
     

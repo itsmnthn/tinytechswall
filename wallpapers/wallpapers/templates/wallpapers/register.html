@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<title>Register User</title>
+	 <link href="bootstrap.min.css" rel="stylesheet">
+	 <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="main">
+	<!-- nav bar -->
+	<section>
+		<div id="#nav">
+			<div class="navbar navbar-inverse nv">
+				<div class="container-fluid">
+					<div class="navbar-header">
+						<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#mynav">
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+						</button>
+						<a class="navbar-brand" href="#">Wallpaper</a>
+					</div>
+					<div class="collapse navbar-collapse" id="mynav">
+						<ul class="nav navbar-nav navbar-right">
+							<li><a href="#">Login</a></li>
+							<li><a href="#">Logout</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- register user -->
+		<section>
+			<div>
+				<div class="container-fluid">
+					<div class="row">
+						<div class="reg">
+							 <form role="form" class="frm">
+							 	<h1>Register User</h1>
+								  <div class="form-group">
+								    <label>First Name:</label>
+								    <input type="text" class="form-control" id="fname">
+								  </div>
+								  <div class="form-group">
+								    <label>Last Name:</label>
+								    <input type="text" class="form-control" id="text">
+								  </div>
+								  <div class="form-group">
+								    <label for="sel">Country:</label>
+								    <select  class="form-control" id="sel">
+								    	<option>a</option>
+								    	<option>b</option>
+								    	<option>c</option>
+								    	<option>d</option>
+								    </select>
+								  </div>
+								  <div class="form-group">
+								    <label>Website:</label>
+								    <input type="text" class="form-control" id="text">
+								  </div>
+								  <div class="form-group">
+								    <label>Email:</label>
+								    <input type="email" class="form-control" id="email">
+								  </div>
+								  <div class="form-group">
+								    <label>User Name:</label>
+								    <input type="text" class="form-control" id="text">
+								  </div>
+								  <div class="form-group">
+								    <label>Password:</label>
+								    <input type="password" class="form-control" id="pwd">
+								  </div>
+								  <div class="form-group">
+								    <label>Confirm Password:</label>
+								    <input type="password" class="form-control" id="pwd">
+								  </div>
+								  <div class="checkbox">
+								    <label><input type="checkbox">Aggre</label>
+								  </div>
+								  <button type="submit" class="btn btn-primary center-block">Register</button>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<!-- footer section -->
+		<section>
+			<div class="foot">
+				<div class="container-fluid ">
+					<div class="row">
+						<div class="col-md-12">
+							<p class="text-center">Copyright @ indian Designer : Dhaval & Mnthn</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+	</section>
+
+	<!-- highlight Wallpaper -->
+
+	<!-- jquery calling -->
+	<script src="jquery.min.js"></script>
+	<script src="bootstrap.min.js"></script>
+	<script src="angular.min.js"></script>
+
+	 <!-- Angular js script -->
+	 	<!-- menu list -->
+ 	<script>
+ 		angular.module('wallApp',[]).controller('menuctrl',function($scope){
+ 			$scope.menus=['Home','Category','About','Contacts'];
+ 		});	
+ 	</script>
+</body>
+
+</html>

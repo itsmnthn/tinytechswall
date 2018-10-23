@@ -81,3 +81,23 @@ border-radius: 0px;
 
 /*category page csss*/
 
+
+/*registr page */
+.reg{
+        /*border: 1px solid red;*/
+        margin-top:-20px;
+        height:auto;
+        padding:4% 30%;
+        width: 100%;
+        background-image:url("reg.jpg");
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+
+
+    }
+.frm{
+        color: white;
+        /*border: 1px solid red;*/
+        width: 80%;
+        padding: 10px;
+   }
