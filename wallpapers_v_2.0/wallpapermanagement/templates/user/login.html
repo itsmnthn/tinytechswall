@@ -10,27 +10,29 @@ Login
 {% block main_content %}
 <!-- Login page will have email and password and login button in center and below
 Sign in button there is line not registered yet then click here! where here has link to register
---> 
+-->
 <div class="logg container">
     <div class="row">
         <div class="col-md-12">
             <div class="panel">
                 <div class="panel-heading col-md-12" style="background-color:#d3c7b8; padding: 10px;">
                     <div class="col-md-6">
-                        <h2 class=""><span class="fa fa-lock f1"> Login</span></h2>
+                        <h2 class=""><span class="fa fa-unlock f1"> Login</span></h2>
                     </div>
                 </div>
                 <div class="panel-body" style="padding: 10px">
+                    
                     <form class="form" method="post" action="{% url 'test' %}">
-                            {% csrf_token %}
+                        {% csrf_token %}
+                        <p class="text-center" style="color: crimson">Username and password are incorrect.</p>
                         <div class="form-group">
-                            <label class="fa fa-envelope" for="email"> Email:</label>
-                            <input type="email" name="email" class="form-control" placeholder="someone@example.com"
-                                required="required">
+                            <label class="fa fa-user" for="username"> Email/Username</label>
+                            <input type="text" name="username" class="form-control" placeholder="someone@example.com"
+                                required>
                         </div>
                         <div class="form-group">
-                            <span class="fa fa-user"> Password:</span>
-                            <input type="password" name="pwd" class="form-control" placeholder="********" required="required">
+                            <label for="password" class="fa fa-lock"> Password</label>
+                            <input type="password" name="password" class="form-control" placeholder="********" required>
                         </div>
                         <div class="form-group">
                             <button class="btn btn-block btn-default" class="form-control">Login</button>
@@ -39,8 +41,8 @@ Sign in button there is line not registered yet then click here! where here has 
                                 <p class="text-center"> Forgot<a href="#"> password?</a></p>
                             </div>
                         </div>
+                    </form>
                 </div>
-                </form>
             </div>
         </div>
     </div>
