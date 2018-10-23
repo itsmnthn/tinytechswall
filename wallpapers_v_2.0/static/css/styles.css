@@ -6,8 +6,18 @@
  	padding:10px;
 }
 .logg .panel{
-	border: 1px solid #00c851;
+	border: 1px solid #424242;
+}
+.logg .form button{
+		float: left;
+		/*background-color: g;*/
+
+}
+.logg .reg{
 }
 .logg .panel input{
 	width: 100%;
+	padding: 10px;
+	border-top: none;
+	border-left: none;
 }
