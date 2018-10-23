@@ -16,6 +16,7 @@ Including another URLconf
 
 from django.urls import path
 from wallpapermanagement import views
+from userauthentication import views as uviews
 urlpatterns = [
     path('', views.home, name="home"),
 
