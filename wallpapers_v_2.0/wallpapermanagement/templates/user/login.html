@@ -2,20 +2,46 @@
 {% comment %} {% extends "user/main_loggedin.html" %} {% endcomment %}
 
 {% block title %}
-    Login
+Login
 {% endblock title %}
-    
+
 
 
 {% block main_content %}
 <!-- Login page will have email and password and login button in center and below
 Sign in button there is line not registered yet then click here! where here has link to register
 -->
-<div class="logg">
-    <div class="container">
+
+
+<div class="container ">
+    <div class="form">
+        <div class="form-group md-form mt-20 pt-1 waves-light waves-effect waves-light">
+            <input type="text" class="form-control" placeholder="someone@example.com">
+        </div>
+        <div class="form-group md-form mt-0 pt-1 waves-light waves-effect waves-light">
+            <input type="text" class="form-control" placeholder="********">
+        </div>
+        <div class="form-group md-form mt-0 pt-1 waves-light waves-effect waves-light">
+            <input type="submit" value="Submit" class="form-control btn-default">
+        </div>
+        <div class="form-group md-form mt-0 pt-1 waves-light waves-effect waves-light">
+            Forgot <a href="{% url 'reset_password' %}">password</a>?
+            Haven't registered yet? click <a href="{% url 'reset_password' %}">here</a> to do.
+        </div>
+        <div class="form-group md-form mt-0 pt-1 waves-light waves-effect waves-light">
+            
+        </div>
+    </div>
+</div>
+
+
+
+
+<div class="logg container">
+    <div class="">
         <div class="row">
             <div class="col-md-12">
-                <div class="col-md-6 ">
+                <div class=" ">
                     <div class="panel center-block ">
                       <div class="panel-heading col-md-12" style="background-color:#419641;">
                         <div>
@@ -53,4 +79,3 @@ Sign in button there is line not registered yet then click here! where here has 
     </div>
 </div>
 {% endblock main_content %}
-    
