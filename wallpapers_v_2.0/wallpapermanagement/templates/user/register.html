@@ -8,25 +8,38 @@ Register
 
 
 {% block main_content %}
-<div class="container">
-
-
-    <div class="form text-center">
-        <div class="form-group md-form mt-20 pt-1 waves-light waves-effect waves-light">
-            <input type="text" class="form-control" placeholder="someone@example.com">
-        </div>
-        <div class="form-group md-form mt-0 pt-1 waves-light waves-effect waves-light">
-            <input type="text" class="form-control" placeholder="********">
-        </div>
-        <div class="form-group md-form mt-0 pt-1 waves-light waves-effect waves-light">
-            <input type="submit" value="Submit" class="form-control btn-default">
-        </div>
-        <div class="form-group md-form mt-0  waves-light waves-effect waves-light">
-            <span>Already a member? click <a href="{% url 'reset_password' %}">here</a> to login.</span>
+<div class="logg container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="panel">
+                <div class="panel-heading col-md-12" style="background-color:#d3c7b8; padding: 10px;">
+                    <div class="col-md-6">
+                        <h2 class=""><span class="fa fa-lock f1"> Login</span></h2>
+                    </div>
+                </div>
+                <div class="panel-body" style="padding: 10px">
+                    <form class="form" method="post">
+                        <div class="form-group">
+                            <label class="fa fa-envelope" for="email"> Email:</label>
+                            <input type="email" name="email" class="form-control" placeholder="someone@example.com"
+                                required="required">
+                        </div>
+                        <div class="form-group">
+                            <span class="fa fa-user"> Password:</span>
+                            <input type="password" name="pwd" class="form-control" placeholder="********" required="required">
+                        </div>
+                        <div class="form-group">
+                            <button class="btn btn-block btn-default" class="form-control">Login</button>
+                            <div class="text-center">
+                                <p class="reg">Not a member?<a href=""> Register </a></p>
+                                <p class="text-center"> Forgot<a href="#"> password?</a></p>
+                            </div>
+                        </div>
+                </div>
+                </form>
+            </div>
         </div>
     </div>
-
-
-
+</div>
 </div>
 {% endblock main_content %}

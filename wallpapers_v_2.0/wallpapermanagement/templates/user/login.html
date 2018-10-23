@@ -10,7 +10,7 @@ Login
 {% block main_content %}
 <!-- Login page will have email and password and login button in center and below
 Sign in button there is line not registered yet then click here! where here has link to register
--->
+--> 
 <div class="logg container">
     <div class="row">
         <div class="col-md-12">
@@ -21,7 +21,8 @@ Sign in button there is line not registered yet then click here! where here has 
                     </div>
                 </div>
                 <div class="panel-body" style="padding: 10px">
-                    <form class="form" method="post">
+                    <form class="form" method="post" action="{% url 'test' %}">
+                            {% csrf_token %}
                         <div class="form-group">
                             <label class="fa fa-envelope" for="email"> Email:</label>
                             <input type="email" name="email" class="form-control" placeholder="someone@example.com"
