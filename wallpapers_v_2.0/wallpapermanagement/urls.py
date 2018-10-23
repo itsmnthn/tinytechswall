@@ -20,9 +20,11 @@ from userauthentication import views as uviews
 urlpatterns = [
     path('', views.home, name="home"),
 
-    path('login/', views.login, name="login"),
+    path('test', views.test, name="test"),
+
+    path('login', views.login, name="login"),
     
-    path('contact-us/', views.contact_us, name="contact_us"),
+    path('contact-us', views.contact_us, name="contact_us"),
     
     path('register', views.register, name="register"),
     

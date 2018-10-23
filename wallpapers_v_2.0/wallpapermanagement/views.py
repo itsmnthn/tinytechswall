@@ -35,3 +35,6 @@ def profile(request):
 def category(request, cat_name):
     wallpapers = Wallpapers.objects.filter(category=cat_name)
     return render(request, 'user/category.html', {'categories':get_available_category(),'category': cat_name, 'wallpapers': wallpapers})
+
+def test(request):
+    return render(request, 'user/test.html')
