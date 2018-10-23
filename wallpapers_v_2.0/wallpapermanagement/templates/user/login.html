@@ -15,34 +15,33 @@ Sign in button there is line not registered yet then click here! where here has 
     <div class="container">
         <div class="row">
             <div class="col-md-12">
-                <div class="col-md-6 ">
-                    <div class="panel center-block ">
-                      <div class="panel-heading col-md-12" style="background-color:#419641;">
+                <div class="col-md-12">
+                    <div class="panel">
+                      <div class="panel-heading col-md-12" style="background-color:#d3c7b8; padding: 10px;">
                         <div>
                           <div class="col-md-6">
-                          <h2 class=""><span class="fa fa-lock f1"> Login</span></h2>    
-                        </div>
-                        <div class="col-md-6">
-                            
-                        </div> 
+                            <h2 class=""><span class="fa fa-lock f1"> Login</span></h2>    
+                          </div> 
                         </div>
                       </div>
                       <div class="panel-body">
-                        <form class="form">
+                        <form class="form" method="post">
                             <div class="col-md-12"><br>
-                                <span class="fa fa-user"> Username:</span><br>
-                                <input type="text" name="user" placeholder="user" required="required">
-                                <br><br>
-                                <span class="fa fa-user"> Email:</span><br>
-                                <input type="email" name="email" placeholder="email" required="required">
-                                <br><br>
-                                <span class="fa fa-eye"> Passaword</span><br>
-                                <input type="passaword" name="passaword" placeholder="passaword" required="required">
-                                <br><br>
-                                <button class="btn btn-success">Login</button>
-                                <button class="btn btn-success">Register</button>
-                                <br>
-                                <div><p>Forgot<a href="#"> password?</a></p></div>
+                               <div class="form-group">
+                                    <span class="fa fa-user"> Email:</span><br>
+                                    <input type="email" name="email" placeholder="someone@example.com" required="required">
+                                </div>
+                                <div class="form-group">
+                                    <span class="fa fa-user"> Password:</span><br>
+                                    <input type="password" name="pwd" placeholder="********" required="required">
+                                </div>
+                               <div class="form-group">
+                                 <button class="btn btn-block btn-default" style="">Login</button>
+                                    <div class="text-center">
+                                        <p class="reg">Not a member?<a href=""> Register </a></p>
+                                        <p class="text-center"> Forgot<a href="#"> password?</a></p>
+                                    </div>
+                               </div>
                             </div>
                         </form>
                       </div>
