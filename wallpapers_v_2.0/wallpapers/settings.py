@@ -30,8 +30,7 @@ ALLOWED_HOSTS = []
 # Application definition
 INSTALLED_APPS = [
     # Wallpaper's Apps
-    'userauthentication.apps.UserauthenticationConfig',
-    'wallpapermanagement.apps.WallpapermanagementConfig',
+    'walls.apps.WallsConfig',
     'accounts.apps.AccountsConfig',
 
     # Default Apps

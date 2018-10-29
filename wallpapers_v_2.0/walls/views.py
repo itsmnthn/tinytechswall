@@ -1,6 +1,6 @@
 from django.shortcuts import render, Http404, HttpResponse, HttpResponseRedirect
 from .models import Categories, Wallpapers
-from userauthentication.models import Users
+from django.contrib.auth.models import User
 
 
 def get_available_category():

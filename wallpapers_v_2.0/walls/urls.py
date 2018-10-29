@@ -15,28 +15,23 @@ Including another URLconf
 """
 
 from django.urls import path
-from wallpapermanagement import views
-from userauthentication import views as uviews
+from walls import views
 urlpatterns = [
     path('', views.home, name="home"),
 
     path('test', views.test, name="test"),
 
-    # path('login', views.login, name="login"),
-    
     path('contact-us', views.contact_us, name="contact_us"),
-    
-    path('register', views.register, name="register"),
-    
+
     path('reset/password', views.reset_password, name="reset_password"),
-    
+
     path('about', views.about, name="about"),
 
     path('about', views.wallpaper, name="wallpaper"),
-    
+
     path('profile', views.profile, name="profile"),
-    
+
     path('categories', views.categories, name='Categories'),
-    
+
     path('category/<str:cat_name>', views.category, name='category'),
 ]
