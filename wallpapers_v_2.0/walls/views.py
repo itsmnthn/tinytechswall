@@ -3,13 +3,9 @@ from .models import Categories, Wallpapers
 from django.contrib.auth.models import User
 
 
-def get_available_category():
-    return Categories.objects.filter(active=True)
-
-
 def home(request):
     walls = Wallpapers.objects.all()
-    return render(request, 'user/home.html', {'categories': get_available_category(), 'wallpapers': walls})
+    return render(request, 'user/home.html', {'wallpapers': walls})
 
 
 def categories(request):
@@ -38,36 +34,13 @@ def wallpaper(request):
 
 def profile(request):
     walls = Wallpapers.objects.all()
-    return render(request, 'user/profile.html', {'categories': get_available_category(), 'wallpapers': walls})
+    return render(request, 'user/profile.html', {'wallpapers': walls})
 
 
 def category(request, cat_name):
-    wallpapers = Wallpapers.objects.filter(category=cat_name)
-    return render(request, 'user/category.html', {'categories': get_available_category(), 'category': cat_name, 'wallpapers': wallpapers})
+    wallpapers = Wallpapers.objects.filter(category=Categories.objects.get(title=cat_name))
+    return render(request, 'user/category.html', {'category': cat_name, 'wallpapers': wallpapers})
 
 
 def test(request):
     return render(request, 'user/test.html')
-
-
-# Login section
-def login(request):
-    return render(request, 'user/login.html')
-
-
-def do_login(request):
-    if request.method != 'POST':
-        raise Http404('Only POSTs are allowed')
-    try:
-        m = Users.objects.get(username=request.POST['username'])
-        if m.password == request.POST['password']:
-            request.session['member_id'] = m.id
-            return render(request, 'user/test.html', data={'usernm': request.POST['username'],
-                'password': request.POST['password']})
-            # return HttpResponseRedirect('/you-are-logged-in/')
-    except:
-        return HttpResponse("Your username and password didn't match.")
-        # a = Users.objects.get(username=request.POST['username'])
-    return render(request, 'user/login.html')
-
-# end login section
