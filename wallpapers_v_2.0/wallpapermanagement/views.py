@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, Http404, HttpResponse, HttpResponseRedirect
 from .models import Categories, Wallpapers
 from userauthentication.models import Users
 
@@ -37,7 +37,8 @@ def wallpaper(request):
 
 
 def profile(request):
-    return render(request, 'user/profile.html')
+    walls = Wallpapers.objects.all()
+    return render(request, 'user/profile.html', {'categories': get_available_category(), 'wallpapers': walls})
 
 
 def category(request, cat_name):
@@ -61,13 +62,12 @@ def do_login(request):
         m = Users.objects.get(username=request.POST['username'])
         if m.password == request.POST['password']:
             request.session['member_id'] = m.id
-            return HttpResponseRedirect('/you-are-logged-in/')
-    except Member.DoesNotExist:
+            return render(request, 'user/test.html', data={'usernm': request.POST['username'],
+                'password': request.POST['password']})
+            # return HttpResponseRedirect('/you-are-logged-in/')
+    except:
         return HttpResponse("Your username and password didn't match.")
-        a = Users.objects.get(username=request.POST['username'])
-        return render(request, 'user/test.html', data = {
-            'usernm': request.POST['username'],
-            'password': request.POST['password']})
+        # a = Users.objects.get(username=request.POST['username'])
     return render(request, 'user/login.html')
 
 # end login section

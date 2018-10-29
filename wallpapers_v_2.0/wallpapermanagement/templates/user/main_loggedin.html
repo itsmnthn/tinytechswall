@@ -9,10 +9,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <title>
-    {% block title %}
+        {% block title %}
         Wallpaper
-    {% endblock title %}
-        </title>
+        {% endblock title %}
+    </title>
 
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
@@ -78,7 +78,8 @@
                                 Home
                             </a>
                         </li>
-                        <li><a class="collapsible-header waves-effect arrow-r">
+                        <li>
+                            <a class="collapsible-header waves-effect arrow-r">
                                 <i class="fa fa-th-list"></i>
                                 Categories
                                 <i class="fa fa-angle-down rotate-icon"></i></a>
@@ -170,12 +171,37 @@
                     </a>
                 </li>
 
+                {% if user.is_authenticated %}
+
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="false">
+                        Account
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
+                        <a class="dropdown-item" href="{% url 'profile' %}">
+                            <i class="fa fa-user"></i>
+                            <span class="clearfix d-none d-sm-inline-block"> Profile</span>
+                        </a>
+                        <a class="dropdown-item" href="javascript:{document.getElementById('logout').submit()}">
+                            <i class="fa fa-sign-out"></i>
+                            <span class="clearfix d-none d-sm-inline-block"> Logout</span>
+                        </a>
+                        <form id="logout" method="POST" action="{% url 'logout' %}">
+                            {% csrf_token %}
+                            <input type="hidden" />
+                        </form>
+                    </div>
+                </li>
+                {% else %}
+
                 <li class="nav-item">
-                    <a class="nav-link" href="{% url 'profile' %}">
-                        <i class="fa fa-user"></i>
-                        <span class="clearfix d-none d-sm-inline-block">Account</span>
+                    <a class="nav-link" href="{% url 'login' %}">
+                        <i class="fa fa-sign-in"></i>
+                        <span class="clearfix d-none d-sm-inline-block">login</span>
                     </a>
                 </li>
+                {% endif %}
 
                 {% comment %} If dropdown needed {% endcomment %}
                 {% comment %} <li class="nav-item dropdown">

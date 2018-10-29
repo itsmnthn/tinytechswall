@@ -32,6 +32,7 @@ INSTALLED_APPS = [
     # Wallpaper's Apps
     'userauthentication.apps.UserauthenticationConfig',
     'wallpapermanagement.apps.WallpapermanagementConfig',
+    'accounts.apps.AccountsConfig',
 
     # Default Apps
     'django.contrib.admin',
