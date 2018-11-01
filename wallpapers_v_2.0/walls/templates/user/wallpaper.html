@@ -34,7 +34,7 @@ Wallpaper
             <!-- Card image -->
             <div class="view view-cascade overlay">
                 <img class="card-img-top" src="{{ wallpaper.image.url }}" alt="{{ wallpaper.title }}">
-                <a href="{{ wallpaper.image.url }}">
+                <a href="#!">
                     <div class="mask rgba-white-slight"></div>
                 </a>
             </div>
@@ -43,20 +43,52 @@ Wallpaper
             <div class="card-body card-body-cascade text-center">
 
                 <!-- Title -->
-                <h4 class="card-title"><strong>{{wallpaper.title}}</strong></h4>
+                <h4 class="card-title"><strong>{{wallpaper.title|title}}</strong></h4>
                 <hr>
-                <!-- Like -->
-                <a class="px-2 fa-lg li-ic"><i class="fa fa-download"></i></a> 
-                <span>{{wallpaper.downloads}}</span>
+                {% if user.is_authenticated %}
                 <!-- Downloads -->
-                <a class="px-2 fa-lg tw-ic"><i class="fa fa-eye"></i></a>
+                <a class="px-2 fa-lg li-ic" download="{{ wallpaper.slug|add:'-wallpaper-com' }}" href="{{ wallpaper.image.url }}"><i
+                        class="fa fa-download"></i></a>
                 <span>{{wallpaper.downloads}}</span>
                 <!-- Views -->
+                <a class="px-2 fa-lg tw-ic"><i class="fa fa-eye"></i></a>
+                <span>{{wallpaper.views}}</span>
+                <!-- Like -->
                 <a class="px-2 fa-lg fb-ic"><i class="fa fa-heart-o"></i></a>
+                <span>{{wallpaper.likes}}</span>
+                <h6 class="pt-2">
+                    {{wallpaper.image.height}} x {{wallpaper.image.width}}
+                </h6>
+                {% else %}
+                <a class="px-2 fa-lg li-ic"><i class="fa fa-download"></i></a>
                 <span>{{wallpaper.downloads}}</span>
-                
+                <!-- Views -->
+                <a class="px-2 fa-lg tw-ic"><i class="fa fa-eye"></i></a>
+                <span>{{wallpaper.views}}</span>
+                <!-- Like -->
+                <a class="px-2 fa-lg fb-ic"><i class="fa fa-heart-o"></i></a>
+                <span>{{wallpaper.likes}}</span>
+                <!-- Login to download -->
+                <h6 class="pt-2">
+                    <a class="cyan-text" href="{% url 'login' %}">Login to download and like the wallpaper</a>
+                </h6>
+                {% endif%}
+
+                <!-- Tags -->
+                {% for tag in wallpaper.get_tags %}
+                <div class="chip chip-lg purple-gradient white-text">
+                    <a class="white-text" href="{% url 'tag' tag%}">{{ tag }}</a>
+                </div>
+                {% endfor %}
+
+
                 <!-- Subtitle -->
-                <h6 class="font-weight-bold indigo-text py-2 pt-5">{{ wallpaper.category}}</h6>
+                <h6 class="font-weight-bold indigo-text py-2 pt-3">{{ wallpaper.category}}</h6>
+                <!-- Location -->
+                {% if wallpaper.location %}
+                <h5> <i class="fa fa-map-marker"></i> {{ wallpaper.location}}</h5>
+                {% endif %}
+
                 <!-- Text -->
                 <p class="card-text">{{wallpaper.description}}
                 </p>

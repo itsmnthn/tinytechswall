@@ -66,6 +66,9 @@ class Wallpapers(models.Model):
 
     def upload_to(self):
         return 'wallpaper_media/wallpapers/'
+    
+    def get_tags(self):
+        return [one.strip() for one in self.tags.split(',')]
 
 
 def slug_save(sender, instance, *args, **kwargs):

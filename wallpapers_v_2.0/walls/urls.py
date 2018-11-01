@@ -36,4 +36,7 @@ urlpatterns = [
     path('categories', views.categories, name='Categories'),
 
     path('category/<str:cat_name>', views.category, name='category'),
+
+    path('tag/<str:tag>', views.tag, name='tag'),
+    path('search/', views.search, name='tag'),
 ]

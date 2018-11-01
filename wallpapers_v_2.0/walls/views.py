@@ -42,6 +42,19 @@ def category(request, cat_name):
     wallpapers = Wallpapers.objects.filter(category=Categories.objects.get(title=cat_name))
     return render(request, 'user/category.html', {'category': cat_name, 'wallpapers': wallpapers})
 
+def tag(request, tag):
+    wallpapers = Wallpapers.objects.filter(tags__icontains=tag)
+    return render(request, 'user/category.html', {'category': tag, 'wallpapers': wallpapers})
+
+def search(request):
+    term = request.GET.get('search_nav')
+    wallpapers = Wallpapers.objects.filter(
+        title__icontains=term,
+        tags__icontains=term,
+        description__icontains=term,
+    )
+    return render(request, 'user/category.html', {'category': term, 'wallpapers': wallpapers})
+
 
 def test(request):
     return render(request, 'user/test.html')
