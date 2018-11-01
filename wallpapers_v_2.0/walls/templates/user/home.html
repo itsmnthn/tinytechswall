@@ -2,9 +2,9 @@
 {% comment %} {% extends "user/main_loggedin.html" %} {% endcomment %}
 
 {% block title %}
-    Wallpaper
+Wallpaper
 {% endblock title %}
-    
+
 
 {% block main_content %}
 
@@ -22,8 +22,10 @@
         <div class="gallery" id="gallery">
             {% for item in wallpapers %}
             <!-- Grid column -->
-            <div class="mb-3 pics animation">
-                <img class="img-fluid" src="{{ item.image.url }}" alt="{{ item.title }}">
+            <div class="mb-4 pics animation">
+                <a href="{% url 'wallpaper' item.category item.slug %}">
+                    <img class="img-fluid" src="{{ item.image.url }}" alt="{{ item.title }}">
+                </a>
             </div>
             {% endfor %}
             {% for item in wallpapers %}

@@ -27,7 +27,9 @@ urlpatterns = [
 
     path('about', views.about, name="about"),
 
-    path('about', views.wallpaper, name="wallpaper"),
+    path('wallpaper', views.wallpaper, name="wallpaper"),
+    
+    path('wallpaper/<str:category>/<str:slug>', views.wallpaper, name="wallpaper"),
 
     path('profile', views.profile, name="profile"),
 

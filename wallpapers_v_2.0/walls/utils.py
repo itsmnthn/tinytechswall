@@ -30,8 +30,8 @@ def upload_image(instance, filename):
         filename {str} -- file name that user uploaded
     """
     extention = filename.split('.')[-1]
-    if instance.title:
-        filename = "{}.{}".format(instance.title.replace(' ', '_'), extention)
+    if instance.slug:
+        filename = "{}.{}".format(instance.slug.replace(' ', '-'), extention)
     else:
         filename = '{}.{}'.format(uuid4().hex, extention)
 

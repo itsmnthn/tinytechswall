@@ -2,16 +2,77 @@
 {% comment %} {% extends "user/main_loggedin.html" %} {% endcomment %}
 
 {% block title %}
-    Wallpaper
+Wallpaper
 {% endblock title %}
-    
+
 
 
 {% block main_content %}
 <div class="container">
+    <section>
+        <!-- Row Title-->
+        <!-- <div class="row">
+            <div class="col-md-12 text-center">
+                <h2>{{wallpaper.title}}</h2>
+            </div>
+        </div> -->
+        <!-- Row Title-->
+        <!-- Grid row -->
+        <!-- <div class="gallery" id="gallery"> -->
+        <!-- <div class="mb-4 pics animation"> -->
+        <!-- <img class="img-fluid" src="{{ wallpaper.image.url }}" alt="{{ item.title }}"> -->
+        <!-- </div> -->
 
+        <!-- <div class="mb-4 pics animation"> -->
+        <!-- <img class="img-fluid" src="{{ wallpaper.image.url }}" alt="{{ item.title }}"> -->
+        <!-- </div> -->
 
-    
+        <!-- </div> -->
+        <!-- Card -->
+        <div class="card card-cascade wider reverse">
+
+            <!-- Card image -->
+            <div class="view view-cascade overlay">
+                <img class="card-img-top" src="{{ wallpaper.image.url }}" alt="{{ wallpaper.title }}">
+                <a href="{{ wallpaper.image.url }}">
+                    <div class="mask rgba-white-slight"></div>
+                </a>
+            </div>
+
+            <!-- Card content -->
+            <div class="card-body card-body-cascade text-center">
+
+                <!-- Title -->
+                <h4 class="card-title"><strong>{{wallpaper.title}}</strong></h4>
+                <hr>
+                <!-- Like -->
+                <a class="px-2 fa-lg li-ic"><i class="fa fa-download"></i></a> 
+                <span>{{wallpaper.downloads}}</span>
+                <!-- Downloads -->
+                <a class="px-2 fa-lg tw-ic"><i class="fa fa-eye"></i></a>
+                <span>{{wallpaper.downloads}}</span>
+                <!-- Views -->
+                <a class="px-2 fa-lg fb-ic"><i class="fa fa-heart-o"></i></a>
+                <span>{{wallpaper.downloads}}</span>
+                
+                <!-- Subtitle -->
+                <h6 class="font-weight-bold indigo-text py-2 pt-5">{{ wallpaper.category}}</h6>
+                <!-- Text -->
+                <p class="card-text">{{wallpaper.description}}
+                </p>
+                <hr>
+                <!-- Linkedin -->
+                <a class="px-2 fa-lg li-ic"><i class="fa fa-linkedin"></i></a>
+                <!-- Twitter -->
+                <a class="px-2 fa-lg tw-ic"><i class="fa fa-twitter"></i></a>
+                <!-- Dribbble -->
+                <a class="px-2 fa-lg fb-ic"><i class="fa fa-facebook"></i></a>
+
+            </div>
+
+        </div>
+        <!-- Card -->
+
+    </section>
 </div>
 {% endblock main_content %}
-    
