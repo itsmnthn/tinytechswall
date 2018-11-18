@@ -13,33 +13,58 @@ Contact Us
     name, email, description, submit
 -->
 <div class="container">
-    <div class="row text-center">
-        <!-- Contact details -->
-        <div class="col-md-6">
-            <h2> Contact us</h2>
-            <address>
-                Saurashtra university<br />
-                5456/452468
-            </address>
-        </div>
-        <!-- Feedback form  -->
-        <div class="col-md-6">
-            <h2> Feedback</h2>
 
-            <div class="row">
-                <input type="text" placeholder="Name" />
-            </div>
-            <div class="row">
-                <input type="text" placeholder="someone@example.com" />
-            </div>
-            <div class="col-md-12">
-                <textarea name="description"> </textarea>
-            </div>
-            <div class="col-md-12">
-                <input type="submit" value="Submit" />
-            </div>
+    <section>
+        <div class="row">
+            <!-- Contact details -->
+            <div class="col-md-6 text-center">
+                <h2>Contact us</h2>
+                <hr />
+                <div class="col-md3">
+                        <br /><br />
+                    <address>
+                        Department of Computer Science<br />
+                        Saurashtra University,<br />
+                        Rajkot - 360 005<br />
+                        Gujarat, India<br />
 
+                    </address>
+                </div>
+            </div>
+            <form class="col-md-6" action="/contact-us" method="POST">
+                {% csrf_token %}
+                <h2 class="text-center">Feedback</h2>
+                <hr />
+                <div class="form-group">
+                    <input type="text" class="form-control" id="name" name='name' placeholder="Dhaval" required />
+                </div>
+                <div class="form-group">
+                    <input type="email" class="form-control" id="email" name='email' placeholder="someone@example.com"
+                        required />
+                </div>
+                <div class="form-group">
+                    <textarea type="text" class="form-control" id="feedback" name='feedback' placeholder="Detailed Feedback"
+                        required></textarea>
+                </div>
+
+                <button type="submit" class="btn btn-primary">Send</button>
+            </form>
         </div>
-    </div>
+        {% if success %}
+
+        <div class="text-center alert alert-success" role='alert'>
+            success
+        </div>
+        {% endif %}
+        {% if failed %}
+
+        <div class="text-center alert alert-danger" role='alert'>
+            success
+        </div>
+        {% endif %}
+    </section>
+
+
+
 </div>
 {% endblock main_content %}

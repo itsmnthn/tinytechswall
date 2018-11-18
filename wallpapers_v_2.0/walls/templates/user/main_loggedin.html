@@ -113,36 +113,6 @@
                                 Contact us
                             </a>
                         </li>
-                        <li>
-                            <a class="collapsible-header waves-effect arrow-r" href="{% url 'login' %}">
-                                <i class="fa fa-envelope-o"></i>
-                                Login
-                            </a>
-                        </li>
-                        <li>
-                            <a class="collapsible-header waves-effect arrow-r" href="{% url 'signup' %}">
-                                <i class="fa fa-envelope-o"></i>
-                                Signup
-                            </a>
-                        </li>
-                        <li>
-                            <a class="collapsible-header waves-effect arrow-r" href="{% url 'reset_password' %}">
-                                <i class="fa fa-envelope-o"></i>
-                                Reset Password
-                            </a>
-                        </li>
-                        <li>
-                            <a class="collapsible-header waves-effect arrow-r" href="{% url 'profile' %}">
-                                <i class="fa fa-envelope-o"></i>
-                                profile
-                            </a>
-                        </li>
-                        <li>
-                            <a class="collapsible-header waves-effect arrow-r" href="{% url 'wallpaper' %}">
-                                <i class="fa fa-envelope-o"></i>
-                                wallpaper
-                            </a>
-                        </li>
                     </ul>
                 </li>
                 <!--/. Side navigation links -->
@@ -182,6 +152,10 @@
                         <a class="dropdown-item" href="{% url 'profile' %}">
                             <i class="fa fa-user"></i>
                             <span class="clearfix d-none d-sm-inline-block"> Profile</span>
+                        </a>
+                        <a class="dropdown-item" href="{% url 'wallpaper_upload' %}">
+                            <i class="fa fa-upload"></i>
+                            <span class="clearfix d-none d-sm-inline-block"> Upload Wallpaper</span>
                         </a>
                         <a class="dropdown-item" href="javascript:{document.getElementById('logout').submit()}">
                             <i class="fa fa-sign-out"></i>
@@ -236,7 +210,8 @@
         <div class="social-section text-center">
 
             <h5 class="text-uppercase font-weight-bold mb-4">About</h5>
-            <p>This website is created as the part of the course MSc. IT and CA and developed by Dhaval and
+            <p>This website is a part of our study of MSc. IT & CA at Computer
+                Science Department of the Saurashtra University Rajkot. Developed by Dhaval and
                 Mnthn.</p>
 
         </div>
@@ -244,12 +219,15 @@
         <hr>
 
         <!--Call to action-->
+        {% if user.is_authenticated %}
+        {% else %}
         <div class="call-to-action text-center my-4">
             <ul class="list-unstyled list-inline">
-                {% comment %} <li class="list-inline-item"><a href="" class="btn btn-primary">Log in!</a></li>
-                <li class="list-inline-item"><a href="" class="btn btn-secondary">Sign up!</a></li> {% endcomment %}
+                <li class="list-inline-item"><a href="{% url 'login' %}" class="btn btn-primary">Log in!</a></li>
+                <li class="list-inline-item"><a href="{% url 'signup' %}" class="btn btn-secondary">Sign up!</a></li>
             </ul>
         </div>
+        {%endif%}
         <!--/.Call to action-->
 
         {% comment %}

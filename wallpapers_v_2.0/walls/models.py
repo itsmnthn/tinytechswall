@@ -1,7 +1,6 @@
 import datetime
 import os
 
-
 from django.contrib.auth.models import User
 from django.db import models
 from django.db.models.signals import pre_save
@@ -66,7 +65,7 @@ class Wallpapers(models.Model):
 
     def upload_to(self):
         return 'wallpaper_media/wallpapers/'
-    
+
     def get_tags(self):
         return [one.strip() for one in self.tags.split(',')]
 
@@ -98,6 +97,11 @@ class TeamMembers(models.Model):
     skills = models.CharField(max_length=100)
     description = models.TextField(max_length=300)
     image = models.ImageField(upload_to=upload_image)
+    github = models.URLField(null=True)
+    linkedin = models.URLField(null=True)
+    instagram = models.URLField(null=True)
+    twitter = models.URLField(null=True)
+    facebook = models.URLField(null=True)
     active = models.BooleanField(default=1, choices=STATUS)
     created_at = models.DateTimeField(auto_now_add=True)
     modified_at = models.DateTimeField(auto_now=True)
@@ -106,4 +110,7 @@ class TeamMembers(models.Model):
         return self.first_name + ' ' + self.last_name
 
     def upload_to(self):
-        return 'site_media/wallpapers/'
+        return 'site_media/teammember/'
+
+    def get_name(self):
+        return self.first_name + ' ' + self.last_name

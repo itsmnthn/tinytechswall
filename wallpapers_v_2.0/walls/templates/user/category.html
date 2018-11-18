@@ -15,11 +15,13 @@
         <!-- Row Title-->
         <!-- Grid row -->
         <div class="gallery" id="gallery">
-            {% for wallpaper in wallpapers %}
+            {% for item in wallpapers %}
             <!-- Grid column -->
-            <div class="mb-3 pics animation">
-                <img class="img-fluid" src="{{ wallpaper.image.url }}" alt="{{ wallpaper.name }}">
-            </div>
+            <div class="mb-4 pics animation">
+                    <a href="{% url 'wallpaper' item.category item.slug %}">
+                        <img class="img-fluid" src="{{ item.image.url }}" alt="{{ item.title }}">
+                    </a>
+                </div>
             <!-- Grid column -->
             {% endfor %}
         </div>

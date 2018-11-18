@@ -25,17 +25,24 @@ urlpatterns = [
 
     path('reset/password', views.reset_password, name="reset_password"),
 
-    path('about', views.about, name="about"),
+    path('about/', views.about, name="about"),
 
     path('wallpaper', views.wallpaper, name="wallpaper"),
-    
-    path('wallpaper/<str:category>/<str:slug>', views.wallpaper, name="wallpaper"),
 
-    path('profile', views.profile, name="profile"),
+    path('wallpaper/<str:category>/<str:slug>',
+         views.wallpaper, name="wallpaper"),
 
-    path('categories', views.categories, name='Categories'),
+    path('profile/', views.profile, name="profile"),
+
+    path('categories/', views.categories, name='Categories'),
+
+    path('download/', views.download, name='download'),
+
+    path('like/', views.like, name='like'),
 
     path('category/<str:cat_name>', views.category, name='category'),
+
+    path('wallpaper/upload', views.wallpaper_upload, name='wallpaper_upload'),
 
     path('tag/<str:tag>', views.tag, name='tag'),
     path('search/', views.search, name='tag'),

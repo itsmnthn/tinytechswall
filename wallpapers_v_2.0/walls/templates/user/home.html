@@ -20,30 +20,12 @@ Wallpaper
         <!-- Row Title-->
         <!-- Grid row -->
         <div class="gallery" id="gallery">
-            {% for item in wallpapers %}
+            {% for item in featured %}
             <!-- Grid column -->
             <div class="mb-4 pics animation">
                 <a href="{% url 'wallpaper' item.category item.slug %}">
                     <img class="img-fluid" src="{{ item.image.url }}" alt="{{ item.title }}">
                 </a>
-            </div>
-            {% endfor %}
-            {% for item in wallpapers %}
-            <!-- Grid column -->
-            <div class="mb-3 pics animation">
-                <img class="img-fluid" src="{{ item.image.url }}" alt="{{ item.title }}">
-            </div>
-            {% endfor %}
-            {% for item in wallpapers %}
-            <!-- Grid column -->
-            <div class="mb-3 pics animation">
-                <img class="img-fluid" src="{{ item.image.url }}" alt="{{ item.title }}">
-            </div>
-            {% endfor %}
-            {% for item in wallpapers %}
-            <!-- Grid column -->
-            <div class="mb-3 pics animation">
-                <img class="img-fluid" src="{{ item.image.url }}" alt="{{ item.title }}">
             </div>
             {% endfor %}
             <!-- Grid column -->
@@ -62,10 +44,12 @@ Wallpaper
         <!-- Row Title-->
         <!-- Grid row -->
         <div class="gallery" id="gallery">
-            {% for item in items %}
+            {% for item in latest %}
             <!-- Grid column -->
-            <div class="mb-3 pics animation">
-                <img class="img-fluid" src="/media/wallpaper_media/categories/Animal.jpg" alt="Card image cap">
+            <div class="mb-4 pics animation">
+                <a href="{% url 'wallpaper' item.category item.slug %}">
+                    <img class="img-fluid" src="{{ item.image.url }}" alt="{{ item.title }}">
+                </a>
             </div>
             {% endfor %}
             <!-- Grid column -->
@@ -84,10 +68,12 @@ Wallpaper
         <!-- Row Title-->
         <!-- Grid row -->
         <div class="gallery" id="gallery">
-            {% for item in items %}
+            {% for item in popular %}
             <!-- Grid column -->
-            <div class="mb-3 pics animation">
-                <img class="img-fluid" src="/media/wallpaper_media/categories/Animal.jpg" alt="Card image cap">
+            <div class="mb-4 pics animation">
+                <a href="{% url 'wallpaper' item.category item.slug %}">
+                    <img class="img-fluid" src="{{ item.image.url }}" alt="{{ item.title }}">
+                </a>
             </div>
             {% endfor %}
             <!-- Grid column -->
@@ -96,27 +82,27 @@ Wallpaper
         <!-- Grid row -->
     </section>
 
-    <section>
-        <!-- Row Title-->
-        <div class="row">
+    <!-- <section> -->
+    <!-- Row Title-->
+    <!-- <div class="row">
             <div class="col-md-12 text-center">
                 <h2>Popular Categories</h2>
             </div>
-        </div>
-        <!-- Row Title-->
-        <!-- Grid row -->
-        <div class="gallery" id="gallery">
-            {% for item in items %}
-            <!-- Grid column -->
-            <div class="mb-3 pics animation">
-                <img class="img-fluid" src="/media/wallpaper_media/categories/Animal.jpg" alt="Card image cap">
+        </div> -->
+    <!-- Row Title-->
+    <!-- Grid row -->
+    <!-- <div class="gallery" id="gallery">
+            {% for item in popular_cat %} -->
+    <!-- Grid column -->
+    <!-- <div class="mb-3 pics animation">
+                <img class="img-fluid" src="{{ item.image.url }}" alt="{{ item.title }}">
             </div>
-            {% endfor %}
-            <!-- Grid column -->
+            {% endfor %} -->
+    <!-- Grid column -->
 
-        </div>
-        <!-- Grid row -->
-    </section>
+    <!-- </div> -->
+    <!-- Grid row -->
+    <!-- </section> -->
 
 </div>
 {% endblock main_content %}

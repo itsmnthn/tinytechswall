@@ -2,9 +2,10 @@ from django.utils.text import slugify
 import os
 from uuid import uuid4
 
+
 def unique_slug_generator(model_instance, title, slug_field):
     """Slugify the title
-    
+
     Arguments:
         model_instance {class} -- instance of the model class
         title {str} -- Field that will be slugified
@@ -18,7 +19,7 @@ def unique_slug_generator(model_instance, title, slug_field):
         object_pk = object_pk.pk + 1
 
         slug = f'{slug}-{object_pk}'
-    
+
     return slug
 
 
@@ -30,9 +31,15 @@ def upload_image(instance, filename):
         filename {str} -- file name that user uploaded
     """
     extention = filename.split('.')[-1]
-    if instance.slug:
-        filename = "{}.{}".format(instance.slug.replace(' ', '-'), extention)
-    else:
-        filename = '{}.{}'.format(uuid4().hex, extention)
+    try:
+        if instance.slug:
+            filename = "{}.{}".format(instance.slug.replace(' ', '-'), extention)
+        else:
+            filename = '{}.{}'.format(uuid4().hex, extention)
+    except:
+        if instance:
+            filename = "{}.{}".format(instance.get_name().replace(' ', '-'), extention)
+        else:
+            filename = '{}.{}'.format(uuid4().hex, extention)
 
     return os.path.join(instance.upload_to(), filename)
